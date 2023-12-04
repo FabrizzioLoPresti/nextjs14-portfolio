@@ -21,6 +21,7 @@ import {
   IconBrandSocketIo,
   IconBrandGit,
   IconBrandGithubCopilot,
+  IconBrandWebflow,
 } from '@tabler/icons-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';

@@ -2,7 +2,7 @@ type Props = {};
 
 const AboutMe = (props: Props) => {
   return (
-    <section className="screens mb-24">
+    <section className="screens mb-24 mt-8">
       <div className="lg:w-3/4">
         <h2 className="text-4xl font-bold mb-4">
           About me<span className="text-[#67CE7E] dark:text-violet-600">.</span>
