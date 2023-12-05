@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconChevronDown,
+} from '@tabler/icons-react';
 
 type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <section className="pattern">
+    <section className="pattern relative">
       <div className="screens min-h-screen h-full flex flex-row items-center xl:gap-x-6">
         <div className="w-3/4 xl:w-1/2">
           <p className="text-2xl">Hi! I{"'"}m Fabri 👋</p>
@@ -47,6 +51,9 @@ const Hero = (props: Props) => {
             className="rounded-full object-cover overflow-hidden w-36 h-36 lg:w-40 lg:h-40 xl:w-72 xl:h-72 border-5 border-[#67CE7E] dark:border-violet-800"
           />
         </div>
+      </div>
+      <div className="absolute bottom-20 left-1/2 text-center mb-4 animate-bounce text-[#67CE7E] dark:text-current">
+        <IconChevronDown size={32} />
       </div>
     </section>
   );
