@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Resend } from 'resend';
+import { renderAsync } from "@react-email/render";
 import ContactFormEmail from '@/components/contact/contact-form-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -14,12 +15,14 @@ export type Message = {
 
 export const sendMessageAction = async (formData: Message) => {
   try {
+    const html = await renderAsync(React.createElement(ContactFormEmail, formData));
+
     const { data, error } = await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
       to: 'fabrizziolopresti1999@gmail.com',
       reply_to: formData.email,
       subject: 'New message from portfolio',
-      react: React.createElement(ContactFormEmail, formData),
+      html
     });
 
     if(error) throw new Error(error.message);
