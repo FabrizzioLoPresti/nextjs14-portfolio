@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { IconExternalLink } from '@tabler/icons-react';
 import ProjectCard from './project-card';
+import { projects } from '@/libs/project';
 
 type Props = {};
 
@@ -13,40 +14,9 @@ const Projects = (props: Props) => {
       </h2>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 justify-center">
-        <ProjectCard
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptas, quas, quos, quod voluptatum atque voluptatibus voluptates
-          nesciunt quibusdam laboriosam doloribus. Voluptatem voluptates quos,
-          quod molestiae natus voluptatum voluptatibus."
-        />
-        <ProjectCard
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptas, quas, quos, quod voluptatum atque voluptatibus voluptates
-          nesciunt quibusdam laboriosam doloribus."
-        />
-        <ProjectCard
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptas, quas, quos, quod voluptatum atque voluptatibus voluptates
-          nesciunt quibusdam laboriosam doloribus. Voluptatem voluptates quos,
-          quod molestiae natus voluptatum voluptatibus."
-        />
-        <ProjectCard
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptas, quas, quos, quod voluptatum atque voluptatibus voluptates
-          nesciunt quibusdam laboriosam doloribus. Voluptatem voluptates quos,
-          quod molestiae natus voluptatum voluptatibus. Voluptatem voluptates quos,"
-        />
-        <ProjectCard
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptas, quas, quos, quod voluptatum atque voluptatibus voluptates
-          nesciunt quibusdam laboriosam doloribus."
-        />
-        <ProjectCard
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          voluptas, quas, quos, quod voluptatum atque voluptatibus voluptates
-          nesciunt quibusdam laboriosam doloribus. Voluptatem voluptates quos,
-          quod molestiae natus voluptatum voluptatibus."
-        />
+        {projects.toSpliced(3).map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
       </div>
 
       <div className="w-full flex items-center justify-center mt-4">
