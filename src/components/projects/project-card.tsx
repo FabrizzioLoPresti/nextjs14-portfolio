@@ -10,7 +10,7 @@ type Props = {
 
 const ProjectCard = ({ project }: Props) => {
   return (
-    <div className="border border-[#67CE7E] dark:border-violet-600 rounded-md flex flex-col justify-between">
+    <article className="border border-[#67CE7E] dark:border-violet-600 rounded-md flex flex-col justify-between">
       <div>
         <Image
           src={project.urlImage}
@@ -54,7 +54,7 @@ const ProjectCard = ({ project }: Props) => {
           </Link>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
