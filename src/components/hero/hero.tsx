@@ -14,7 +14,7 @@ const Hero = (props: Props) => {
       <div className="screens min-h-screen h-full flex flex-row items-center xl:gap-x-6">
         <div className="w-3/4 xl:w-1/2">
           <p className="text-2xl">Hi! I{"'"}m Fabri 👋</p>
-          <h1 className="font-bold text-4xl">
+          <h1 className="font-bold text-5xl">
             Full-Stack{' '}
             <span className="text-[#67CE7E] dark:text-violet-600">
               Developer
