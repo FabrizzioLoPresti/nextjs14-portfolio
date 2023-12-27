@@ -3,25 +3,16 @@ import { IconExternalLink } from '@tabler/icons-react';
 import ProjectCard from './project-card';
 import { client } from '@/utils/sanity/client';
 import { ProjectType } from '@/types/types';
+import { getHomeProjects } from '@/libs/sanity-queries';
 
 type Props = {};
 
 const Projects = async (props: Props) => {
   const projects: ProjectType[] = await client.fetch(
-    `*[_type == "project"] | order(_createdAt desc) [0..2] {
-      _id,
-      title,
-      description,
-      urlGithub,
-      urlDeploy,
-      "urlImage": image.asset->url,
-      tags
-    }`,
+    getHomeProjects,
+    {},
     {
       cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
     },
   );
 

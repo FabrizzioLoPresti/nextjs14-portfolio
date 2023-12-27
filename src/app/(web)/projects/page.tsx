@@ -1,25 +1,16 @@
 import ProjectCard from '@/components/projects/project-card';
 import { client } from '@/utils/sanity/client';
 import { ProjectType } from '@/types/types';
+import { getAllProjects } from '@/libs/sanity-queries';
 
 type Props = {};
 
 export default async function ProjectsPage({}: Props) {
   const projects: ProjectType[] = await client.fetch(
-    `*[_type == "project"] | order(_createdAt desc) {
-      _id,
-      title,
-      description,
-      urlGithub,
-      urlDeploy,
-      "urlImage": image.asset->url,
-      tags
-    }`,
+    getAllProjects,
+    {},
     {
       cache: 'no-cache',
-      next: {
-        revalidate: 0,
-      },
     },
   );
 
