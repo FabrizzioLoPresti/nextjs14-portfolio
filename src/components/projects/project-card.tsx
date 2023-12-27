@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Chip } from '@nextui-org/react';
 import { IconBrandGithub, IconWorldCode } from '@tabler/icons-react';
-import { IProject } from '@/types/types';
+import { ProjectType } from '@/types/types';
 
 type Props = {
-  project: IProject;
+  project: ProjectType;
 };
 
 const ProjectCard = ({ project }: Props) => {
