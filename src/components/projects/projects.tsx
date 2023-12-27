@@ -1,12 +1,29 @@
 import Link from 'next/link';
 import { IconExternalLink } from '@tabler/icons-react';
 import ProjectCard from './project-card';
-import { projects } from '@/libs/project';
+import { client } from '@/utils/sanity/client';
+import { ProjectType } from '@/types/types';
 
 type Props = {};
 
-const Projects = (props: Props) => {
-  const sliceProjects = projects.slice(0, 3);
+const Projects = async (props: Props) => {
+  const projects: ProjectType[] = await client.fetch(
+    `*[_type == "project"] | order(_createdAt desc) [0..2] {
+      _id,
+      title,
+      description,
+      urlGithub,
+      urlDeploy,
+      "urlImage": image.asset->url,
+      tags
+    }`,
+    {
+      cache: 'no-cache',
+      next: {
+        revalidate: 0,
+      },
+    },
+  );
 
   return (
     <main className="screens mb-24">
@@ -19,8 +36,8 @@ const Projects = (props: Props) => {
         {/* {projects.toSpliced(3).map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))} */}
-        {sliceProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+        {projects.map((project) => (
+          <ProjectCard key={project._id} project={project} />
         ))}
       </div>
 

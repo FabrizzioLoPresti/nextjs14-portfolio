@@ -14,14 +14,14 @@ const ProjectCard = ({ project }: Props) => {
       <div>
         <Image
           src={project.urlImage}
-          alt={project.name}
+          alt={project.title}
           width={300}
           height={300}
           className="rounded-t-md object-fill overflow-hidden w-full h-[250px]"
         />
         <div className="p-4">
           <h3 className="text-2xl font-bold text-[#67CE7E] dark:text-violet-600">
-            {project.name}
+            {project.title}
           </h3>
           <p className="text-sm">{project.description}</p>
           <div className="flex flex-row gap-2 flex-wrap my-2">

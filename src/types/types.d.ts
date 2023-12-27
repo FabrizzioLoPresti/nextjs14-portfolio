@@ -1,9 +1,19 @@
 export type IProject = {
-  id?: string;
-  name: string;
+  _id?: string
+  title: string;
   description: string;
   urlImage: string;
   tags: string[];
   urlGithub: string;
   urlDeploy: string;
 }
+
+export type ProjectType = {
+  _id: string;
+  title: string;
+  description: string;
+  urlGithub: string;
+  urlDeploy: string;
+  urlImage: string;
+  tags: string[];
+};
