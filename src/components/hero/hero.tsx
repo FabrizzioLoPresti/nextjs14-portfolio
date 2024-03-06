@@ -44,7 +44,7 @@ const Hero = (props: Props) => {
         </div>
         <div className="hidden md:block">
           <Image
-            src="/images/profile-image.jpg"
+            src="/images/profile-image.webp"
             width={300}
             height={300}
             alt="Fabrizzio Lo Presti"
