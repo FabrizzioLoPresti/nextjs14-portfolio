@@ -46,7 +46,7 @@ const NavbarComponent = (props: Props) => {
             placement="bottom"
           >
             <a
-              href={'/FabrizzioLoPresti_CV.pdf'}
+              href={'/FabrizzioLoPresti_CV_English.pdf'}
               download
               color="foreground"
               className="flex flex-row items-center gap-x-1"
