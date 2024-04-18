@@ -9,6 +9,7 @@ import {
   IconBrandThreejs,
   IconBrandReact,
   IconBrandNextjs,
+  IconBrandAstro,
   IconBrandVercel,
   IconBrandRedux,
   IconBrandCypress,
@@ -66,6 +67,10 @@ const skills: Skill[] = [
   {
     name: 'Next.js',
     icon: <IconBrandNextjs size={48} />,
+  },
+  {
+    name: 'Astro',
+    icon: <IconBrandAstro size={48} />,
   },
   {
     name: 'Vercel',
